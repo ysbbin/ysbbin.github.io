@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YSB 포트폴리오</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #faf8f5;
+            --bg-secondary: #f5f2ed;
+            --bg-card: #ffffff;
+            --text-primary: #2d3436;
+            --text-secondary: #636e72;
+            --text-light: #95a5a6;
+            --accent: #2c5f8d;
+            --accent-light: #4a7ba7;
+            --accent-lighter: #e8f1f8;
+            --border: #e8e4df;
+            --shadow: rgba(45, 52, 54, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 400;
+            line-height: 1.7;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* Profile Section */
+        .profile-section {
+            background: var(--bg-card);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px var(--shadow);
+            padding: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .profile-header {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 3rem;
+            align-items: start;
+            margin-bottom: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            background: linear-gradient(135deg, var(--accent-lighter) 0%, var(--bg-secondary) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            box-shadow: 0 8px 16px var(--shadow);
+        }
+
+        .profile-info {
+            flex: 1;
+        }
+
+        .profile-info h1 {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.2rem;
+        }
+
+        .profile-info .name-en {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            font-weight: 300;
+            margin-left: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .profile-info .title {
+            font-size: 1.3rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .profile-info .description {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .contact-item strong {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .contact-item a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            transition: color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent);
+            background: var(--accent-lighter);
+            box-shadow: 0 2px 8px rgba(44, 95, 141, 0.25);
+        }
+
+        /* Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .info-card {
+            background: var(--bg-secondary);
+            padding: 1.2rem 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px var(--shadow);
+        }
+
+        .info-card h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-card h3::before {
+            content: '';
+            width: 4px;
+            height: 20px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            color: var(--text-secondary);
+            padding: 0.4rem 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.88rem;
+        }
+
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+
+        .info-list li strong {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .info-list li .date {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .skill-tag {
+            padding: 0.5rem 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--text-primary);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: var(--accent-lighter);
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Projects Section */
+        .projects-section {
+            margin-top: 3rem;
+        }
+
+        .section-title {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(to right, var(--accent), transparent);
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .projects-gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px var(--shadow);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 36px rgba(44, 95, 141, 0.25), 0 6px 12px rgba(45, 52, 54, 0.1);
+        }
+
+        .project-thumbnail {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--accent-lighter) 0%, var(--bg-secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-thumbnail::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.1) 100%);
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        .project-category {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 0.78rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.8rem;
+            line-height: 1.4;
+        }
+
+        .project-description {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-badge {
+            padding: 0.25rem 0.6rem;
+            background: var(--accent-lighter);
+            color: var(--accent);
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: gap 0.3s ease;
+        }
+
+        .project-link:hover {
+            gap: 0.7rem;
+        }
+
+        .project-link::after {
+            content: '→';
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .projects-gallery {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 968px) {
+            .profile-header {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .profile-image {
+                margin: 0 auto;
+            }
+
+            .contact-info {
+                justify-content: center;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 1.5rem 1rem;
+            }
+
+            .profile-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .profile-info h1 {
+                font-size: 2rem;
+            }
+
+            .projects-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+
+        /* Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--bg-card);
+            border-radius: 12px;
+            max-width: 700px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 2.5rem;
+            position: relative;
+            animation: modalIn 0.3s ease;
+        }
+
+        @keyframes modalIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1.2rem;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: var(--text-light);
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .modal-close:hover {
+            color: var(--text-primary);
+        }
+
+        .modal-category {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-title {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .modal-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .modal-body h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-top: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-body p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .modal-body ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .modal-body ul li {
+            color: var(--text-secondary);
+            font-size: 0.93rem;
+            padding: 0.3rem 0;
+            padding-left: 1rem;
+            position: relative;
+            line-height: 1.7;
+        }
+
+        .modal-body ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.75rem;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Profile Section -->
+        <section class="profile-section fade-in">
+            <div class="profile-header">
+                <div class="profile-image">
+                    👨‍💻
+                </div>
+                <div class="profile-info">
+                    <h1>임수빈 <span class="name-en">Soobin Yim</span></h1>
+                    <p class="title">AI Developer & Data Analyst</p>
+                    <p class="description">
+                        데이터 기반의 문제 해결을 추구하는 AI 개발자입니다.
+                        다양한 AI 모델을 활용한 컴퓨터 비전 및 자연어 처리 프로젝트를 수행했으며,
+                        시계열 예측과 데이터 분석 챌린지에서 수상한 경험이 있습니다.
+                        Python과 C/C++ 기반의 AI 모델 개발부터 데이터 분석까지 폭넓은 경험을 쌓고 있습니다.
+                    </p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <strong>📧</strong> <a href="mailto:ysb5391@gmail.com">ysb5391@gmail.com</a>
+                        </div>
+<div class="contact-item">
+                            <strong>💼</strong> GitHub: <a href="https://github.com/ysbbin" target="_blank">github.com/ysbbin</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-grid">
+                <!-- Education Card -->
+                <div class="info-card">
+                    <h3>🎓 학력</h3>
+                    <ul class="info-list">
+                        <li>
+                            <div>
+                                <strong>죽전고등학교</strong><br>
+                            </div>
+                            <span class="date">2017 - 2020</span>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>숭실대학교</strong><br>
+                                <span style="font-size: 0.85rem;">전자정보공학부 IT융합학과</span>
+                            </div>
+                            <span class="date">2022 - 2026</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Certifications Card -->
+                <div class="info-card">
+                    <h3>📜 자격증&어학</h3>
+                    <ul class="info-list">
+                        <li>
+                            <strong>SQLD</strong>
+                            <span class="date">2025</span>
+                        </li>
+                        <li>
+                            <strong>ADsP</strong>
+                            <span class="date">2025</span>
+                        </li>
+                        <li>
+                            <strong>정보처리기사</strong>
+                            <span class="date">2026</span>
+                        </li>
+                        <li>
+                            <strong>Toeic Speaking Test | IH(140)</strong>
+                            <span class="date">2025</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Experience Card -->
+                <div class="info-card">
+                    <h3>💼 경력</h3>
+                    <ul class="info-list">
+                        <li>
+                            <div>
+                                <strong>AISRC(AI보안연구센터)</strong><br>
+                                <span style="font-size: 0.85rem;">기술연구원</span>
+                            </div>
+                            <span class="date">2026.01 - 현재</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="info-card" style="margin-top: 2rem;">
+                <h3>💻 기술 스택</h3>
+                <div class="skills-tags">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">C</span>
+                    <span class="skill-tag">C++</span>
+                    <span class="skill-tag">OpenCV</span>
+                    <span class="skill-tag">TensorFlow</span>
+                    <span class="skill-tag">PyTorch</span>
+                    <span class="skill-tag">OpenAI API</span>
+                    <span class="skill-tag">Pandas</span>
+                    <span class="skill-tag">NumPy</span>
+                    <span class="skill-tag">Scikit-learn</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">HTML/CSS</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Git</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects-section">
+            <h2 class="section-title">프로젝트</h2>
+
+            <div class="projects-gallery">
+                <!-- Project 1 -->
+                <div class="project-card fade-in" onclick="openModal('modal-1')">
+                    <div class="project-thumbnail">🍳</div>
+                    <div class="project-info">
+                        <div class="project-category">AI / 컴퓨터 비전</div>
+                        <h3 class="project-title">식재료 인식 기반 레시피 추천 시스템</h3>
+                        <p class="project-description">
+                            YOLO 모델로 식재료를 인식하고 GPT API 챗봇을 통해 맞춤 레시피를 추천하는 AI 시스템을 개발했습니다.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">YOLO</span>
+                            <span class="tech-badge">OpenAI API</span>
+                            <span class="tech-badge">Streamlit</span>
+                        </div>
+                        <span class="project-link">자세히 보기</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card fade-in" style="animation-delay: 0.1s;" onclick="openModal('modal-2')">
+                    <div class="project-thumbnail">🧠</div>
+                    <div class="project-info">
+                        <div class="project-category">딥러닝</div>
+                        <h3 class="project-title">NumPy 기반 인공신경망 구현</h3>
+                        <p class="project-description">
+                            딥러닝 프레임워크 없이 NumPy만으로 인공신경망을 직접 구현하며 핵심 동작 원리를 분석했습니다.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">NumPy</span>
+                        </div>
+                        <span class="project-link">자세히 보기</span>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card fade-in" style="animation-delay: 0.2s;" onclick="openModal('modal-3')">
+                    <div class="project-thumbnail">⚙️</div>
+                    <div class="project-info">
+                        <div class="project-category">시스템 프로그래밍</div>
+                        <h3 class="project-title">CNN 추론 병렬처리 성능 분석</h3>
+                        <p class="project-description">
+                            멀티코어 환경에서 CNN 추론 연산의 병렬처리 성능을 비교 분석하는 시스템 프로그래밍 프로젝트입니다.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">C</span>
+                            <span class="tech-badge">POSIX</span>
+                            <span class="tech-badge">Mutex</span>
+                            <span class="tech-badge">Semaphore</span>
+                        </div>
+                        <span class="project-link">자세히 보기</span>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card fade-in" style="animation-delay: 0.3s;" onclick="openModal('modal-4')">
+                    <div class="project-thumbnail">🏭</div>
+                    <div class="project-info">
+                        <div class="project-category">AI 챌린지</div>
+                        <h3 class="project-title">스마트팩토리 전력 소비 예측</h3>
+                        <p class="project-description">
+                            스마트 팩토리 설비별 전력 소비 시계열 데이터를 예측하는 AI 모델을 개발하여 우수상을 수상했습니다.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Time Series</span>
+                            <span class="tech-badge">Scikit-learn</span>
+                        </div>
+                        <span class="project-link">자세히 보기</span>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card fade-in" style="animation-delay: 0.4s;" onclick="openModal('modal-5')">
+                    <div class="project-thumbnail">📚</div>
+                    <div class="project-info">
+                        <div class="project-category">데이터 분석</div>
+                        <h3 class="project-title">도서관 보존서고 이동 예측 분석</h3>
+                        <p class="project-description">
+                            도서 대출 데이터를 분석하여 보존서고 이동 대상 도서를 선정하고 주제별 입수량을 예측했습니다.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Pandas</span>
+                            <span class="tech-badge">Matplotlib</span>
+                        </div>
+                        <span class="project-link">자세히 보기</span>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card fade-in" style="animation-delay: 0.5s;" onclick="openModal('modal-6')">
+                    <div class="project-thumbnail">🔢</div>
+                    <div class="project-info">
+                        <div class="project-category">머신러닝</div>
+                        <h3 class="project-title">폰트 데이터 증강을 통한 MNIST 분류 성능 개선</h3>
+                        <p class="project-description">
+                            직접 생성한 폰트 데이터로 학습 데이터를 증강하여 MNIST 분류 모델의 일반화 성능 향상을 검증했습니다.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Scikit-learn</span>
+                            <span class="tech-badge">Data Augmentation</span>
+                        </div>
+                        <span class="project-link">자세히 보기</span>
+                    </div>
+                </div>
+
+                <!-- Project 7 -->
+                <div class="project-card fade-in" style="animation-delay: 0.6s;" onclick="openModal('modal-7')">
+                    <div class="project-thumbnail">🎯</div>
+                    <div class="project-info">
+                        <div class="project-category">객체 탐지</div>
+                        <h3 class="project-title">열악한 환경에서의 강건한 객체 탐지 비교</h3>
+                        <p class="project-description">
+                            VisDrone-DET 데이터셋에서 다양한 객체 탐지 모델의 성능과 열화 조건에서의 강건성을 비교 분석했습니다.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">YOLO</span>
+                            <span class="tech-badge">Faster R-CNN</span>
+                            <span class="tech-badge">Deformable DETR</span>
+                        </div>
+                        <span class="project-link">자세히 보기</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Detail Modals -->
+        <div class="modal-overlay" id="modal-1" onclick="closeModal(event)">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeModal(event, true)">&times;</button>
+                <div class="modal-category">AI / 컴퓨터 비전</div>
+                <h2 class="modal-title">식재료 인식 기반 레시피 추천 시스템</h2>
+                <div class="modal-tech">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">YOLO</span>
+                    <span class="tech-badge">OpenAI API</span>
+                    <span class="tech-badge">Streamlit</span>
+                </div>
+                <div class="modal-body">
+                    <h3>프로젝트 개요</h3>
+                    <p>카메라로 촬영한 식재료를 YOLO 모델이 자동으로 인식하고, 인식된 재료를 기반으로 GPT API 챗봇이 맞춤형 레시피를 추천해주는 AI 시스템입니다.</p>
+                    <h3>주요 역할</h3>
+                    <ul>
+                        <li>프로젝트 전체 방향 설계 및 아키텍처 구성</li>
+                        <li>식재료 이미지 데이터 수집 및 전처리</li>
+                        <li>YOLO 모델 학습 및 다양한 모델 간 비교 실험 수행</li>
+                        <li>OpenAI GPT API를 연동한 챗봇 기반 레시피 추천 기능 구현</li>
+                        <li>Streamlit을 활용한 웹 인터페이스 개발</li>
+                    </ul>
+                    <h3>성과</h3>
+                    <p>데이터 수집부터 모델 학습, 서비스 배포까지 AI 프로젝트의 전체 파이프라인을 경험하며 컴퓨터 비전과 자연어 처리를 결합한 실용적인 서비스를 구현했습니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-overlay" id="modal-2" onclick="closeModal(event)">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeModal(event, true)">&times;</button>
+                <div class="modal-category">딥러닝</div>
+                <h2 class="modal-title">NumPy 기반 인공신경망 구현</h2>
+                <div class="modal-tech">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">NumPy</span>
+                </div>
+                <div class="modal-body">
+                    <h3>프로젝트 개요</h3>
+                    <p>TensorFlow, PyTorch 등 딥러닝 프레임워크를 사용하지 않고 NumPy만으로 인공신경망을 밑바닥부터 직접 구현하여 핵심 동작 원리를 깊이 이해하는 프로젝트입니다.</p>
+                    <h3>주요 내용</h3>
+                    <ul>
+                        <li>순전파(Forward Propagation) 및 역전파(Backpropagation) 알고리즘 직접 구현</li>
+                        <li>활성화 함수(ReLU, Sigmoid, Softmax) 및 손실 함수 구현</li>
+                        <li>경사 하강법 기반 가중치 업데이트 로직 설계</li>
+                        <li>다층 퍼셉트론(MLP) 구조 구현 및 학습 실험</li>
+                    </ul>
+                    <h3>성과</h3>
+                    <p>프레임워크에 의존하지 않고 신경망의 수학적 원리를 직접 구현함으로써 딥러닝의 근본적인 동작 메커니즘에 대한 깊은 이해를 확보했습니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-overlay" id="modal-3" onclick="closeModal(event)">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeModal(event, true)">&times;</button>
+                <div class="modal-category">시스템 프로그래밍</div>
+                <h2 class="modal-title">CNN 추론 병렬처리 성능 분석</h2>
+                <div class="modal-tech">
+                    <span class="tech-badge">C</span>
+                    <span class="tech-badge">POSIX</span>
+                    <span class="tech-badge">Mutex</span>
+                    <span class="tech-badge">Semaphore</span>
+                </div>
+                <div class="modal-body">
+                    <h3>프로젝트 개요</h3>
+                    <p>멀티코어 환경에서 CNN 추론 연산의 병렬처리 성능을 비교 분석하는 운영체제 기반 시스템 프로그래밍 프로젝트입니다.</p>
+                    <h3>주요 내용</h3>
+                    <ul>
+                        <li>C언어와 POSIX API를 활용한 프로세스 기반 병렬 처리 구현</li>
+                        <li>스레드 기반 병렬 처리 구현 및 프로세스 방식과 성능 비교</li>
+                        <li>뮤텍스(Mutex)와 세마포어(Semaphore) 동기화 기법 직접 구현</li>
+                        <li>동기화 방식에 따른 병렬 처리 성능 영향 비교 분석</li>
+                    </ul>
+                    <h3>성과</h3>
+                    <p>프로세스/스레드 병렬 처리와 동기화 기법의 성능 차이를 실험적으로 검증하며 운영체제 수준의 시스템 프로그래밍 역량을 강화했습니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-overlay" id="modal-4" onclick="closeModal(event)">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeModal(event, true)">&times;</button>
+                <div class="modal-category">AI 챌린지</div>
+                <h2 class="modal-title">스마트팩토리 전력 소비 예측</h2>
+                <div class="modal-tech">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Time Series</span>
+                    <span class="tech-badge">Scikit-learn</span>
+                </div>
+                <div class="modal-body">
+                    <h3>프로젝트 개요</h3>
+                    <p>스마트 팩토리 AI 챌린지에 참여하여 설비별 전력 소비 시계열 데이터를 예측하는 AI 모델을 개발한 프로젝트입니다.</p>
+                    <h3>주요 내용</h3>
+                    <ul>
+                        <li>설비별 전력 소비 시계열 데이터 탐색 및 전처리</li>
+                        <li>시계열 특성을 반영한 피처 엔지니어링 수행</li>
+                        <li>다양한 머신러닝 모델 비교 실험 및 하이퍼파라미터 튜닝</li>
+                        <li>예측 정확도 최적화를 통한 최종 모델 선정</li>
+                    </ul>
+                    <h3>성과</h3>
+                    <p>대회에서 <strong>우수상</strong>을 수상하며 시계열 데이터 분석과 예측 모델링 역량을 입증했습니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-overlay" id="modal-5" onclick="closeModal(event)">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeModal(event, true)">&times;</button>
+                <div class="modal-category">데이터 분석</div>
+                <h2 class="modal-title">도서관 보존서고 이동 예측 분석</h2>
+                <div class="modal-tech">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Pandas</span>
+                    <span class="tech-badge">Matplotlib</span>
+                </div>
+                <div class="modal-body">
+                    <h3>프로젝트 개요</h3>
+                    <p>데이터톤에 참여하여 도서관의 도서 대출 데이터를 분석하고, 보존서고 이동 대상 도서를 선정하며 향후 서가 공간 확보를 위한 예측 분석을 수행한 프로젝트입니다.</p>
+                    <h3>주요 내용</h3>
+                    <ul>
+                        <li>도서 대출 이력 데이터 정제 및 탐색적 데이터 분석(EDA) 수행</li>
+                        <li>자료의 최신성과 이용 가능성을 기준으로 보존서고 이동 대상 도서 선정 기준 수립</li>
+                        <li>주제별 도서 입수량 예측 모델 개발</li>
+                        <li>분석 결과를 기반으로 서가 공간 확보 전략 제안</li>
+                    </ul>
+                    <h3>성과</h3>
+                    <p>실제 도서관 운영 데이터를 활용한 데이터 기반 의사결정 과정을 경험하며 데이터 분석 및 시각화 역량을 강화했습니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-overlay" id="modal-6" onclick="closeModal(event)">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeModal(event, true)">&times;</button>
+                <div class="modal-category">머신러닝</div>
+                <h2 class="modal-title">폰트 데이터 증강을 통한 MNIST 분류 성능 개선</h2>
+                <div class="modal-tech">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Scikit-learn</span>
+                    <span class="tech-badge">Data Augmentation</span>
+                </div>
+                <div class="modal-body">
+                    <h3>프로젝트 개요</h3>
+                    <p>'폰트 데이터 증강이 MNIST 숫자 분류 모델의 일반화 성능을 향상시킬 것이다'라는 가설을 설정하고 이를 실험적으로 검증한 머신러닝 프로젝트입니다.</p>
+                    <h3>주요 내용</h3>
+                    <ul>
+                        <li>다양한 폰트를 활용한 숫자 이미지 데이터 직접 생성</li>
+                        <li>기존 MNIST 데이터셋에 생성한 폰트 데이터를 추가하여 학습 데이터 증강</li>
+                        <li>기존 데이터로만 학습한 모델 vs 증강 데이터로 학습한 모델 성능 비교</li>
+                        <li>실험 결과 비교 분석을 통한 가설 검증</li>
+                    </ul>
+                    <h3>성과</h3>
+                    <p>데이터 증강이 모델의 일반화 성능 향상에 긍정적 영향을 미친다는 것을 실험적으로 입증하며 가설을 성공적으로 검증했습니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-overlay" id="modal-7" onclick="closeModal(event)">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeModal(event, true)">&times;</button>
+                <div class="modal-category">객체 탐지</div>
+                <h2 class="modal-title">열악한 환경에서의 강건한 객체 탐지 비교</h2>
+                <div class="modal-tech">
+                    <span class="tech-badge">YOLO</span>
+                    <span class="tech-badge">Faster R-CNN</span>
+                    <span class="tech-badge">Deformable DETR</span>
+                    <span class="tech-badge">Python</span>
+                </div>
+                <div class="modal-body">
+                    <h3>프로젝트 개요</h3>
+                    <p>VisDrone-DET 데이터셋을 활용하여 주요 객체 탐지 모델들의 성능을 비교하고, 노이즈/블러/저해상도 등 열악한 조건에서의 강건성을 분석한 프로젝트입니다.</p>
+                    <h3>주요 내용</h3>
+                    <ul>
+                        <li>YOLO, Faster R-CNN, Deformable DETR 3개 모델의 객체 탐지 성능 비교</li>
+                        <li>합성 열화(노이즈, 블러, 저해상도) 조건을 적용한 강건성 실험 설계</li>
+                        <li>정상 조건 및 열화 조건에서의 탐지 성능(Recall) 비교 분석</li>
+                        <li>방위 및 감시 시나리오에서의 최악 조건 대응 성능 평가</li>
+                    </ul>
+                    <h3>성과</h3>
+                    <p>다양한 열화 조건에서 각 모델의 강건성 차이를 실험적으로 규명하며 실전 환경에 적합한 객체 탐지 모델 선정 기준을 제시했습니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer style="text-align: center; margin-top: 4rem; padding: 2rem 0; color: var(--text-secondary); border-top: 1px solid var(--border);">
+            <p>© 2026 임수빈. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Modal functions
+        function openModal(id) {
+            document.getElementById(id).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(event, forceClose) {
+            if (forceClose || event.target.classList.contains('modal-overlay')) {
+                event.target.closest('.modal-overlay').classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal-overlay.active').forEach(m => {
+                    m.classList.remove('active');
+                });
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
