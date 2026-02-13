@@ -631,7 +631,7 @@
                     </ul>
                 </div>
 
-                <!-- Experience Card -->
+                <!-- Experience & Awards Card -->
                 <div class="info-card">
                     <h3>💼 경력</h3>
                     <ul class="info-list">
@@ -641,6 +641,24 @@
                                 <span style="font-size: 0.85rem;">기술연구원</span>
                             </div>
                             <span class="date">2026.01 - 현재</span>
+                        </li>
+                    </ul>
+                    <hr style="border: none; border-top: 1px solid var(--border); margin: 0.8rem 0;">
+                    <h3>🏆 수상</h3>
+                    <ul class="info-list">
+                        <li>
+                            <div>
+                                <strong>스마트팩토리 전력 예측 AI 챌린지</strong><br>
+                                <span style="font-size: 0.85rem;">우수상 | 단국대 SW중심대학사업단</span>
+                            </div>
+                            <span class="date">2025.06</span>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>프로젝트 보고서 챌린지(CPC)</strong><br>
+                                <span style="font-size: 0.85rem;">수상 | 숭실대 차세대반도체학과</span>
+                            </div>
+                            <span class="date">2025.08</span>
                         </li>
                     </ul>
                 </div>
@@ -697,9 +715,9 @@
                     <div class="project-thumbnail">🧠</div>
                     <div class="project-info">
                         <div class="project-category">딥러닝</div>
-                        <h3 class="project-title">NumPy 기반 인공신경망 구현</h3>
+                        <h3 class="project-title">NumPy 기반 CIFAR-100 분류기 구현</h3>
                         <p class="project-description">
-                            딥러닝 프레임워크 없이 NumPy만으로 인공신경망을 직접 구현하며 핵심 동작 원리를 분석했습니다.
+                            프레임워크 없이 NumPy만으로 CNN, ResNet 등을 직접 구현하여 CIFAR-100 분류 정확도를 13%에서 70.52%까지 향상시켰습니다.
                         </p>
                         <div class="project-tech">
                             <span class="tech-badge">Python</span>
@@ -733,14 +751,15 @@
                     <div class="project-thumbnail">🏭</div>
                     <div class="project-info">
                         <div class="project-category">AI 챌린지</div>
-                        <h3 class="project-title">스마트팩토리 전력 소비 예측</h3>
+                        <h3 class="project-title">스마트팩토리 전력 소비 예측 (우수상)</h3>
                         <p class="project-description">
-                            스마트 팩토리 설비별 전력 소비 시계열 데이터를 예측하는 AI 모델을 개발하여 우수상을 수상했습니다.
+                            설비별 전력 소비 시계열 데이터를 분석하고 Stacking 앙상블 기법으로 예측 모델을 구축하여 우수상을 수상했습니다.
                         </p>
                         <div class="project-tech">
                             <span class="tech-badge">Python</span>
-                            <span class="tech-badge">Time Series</span>
-                            <span class="tech-badge">Scikit-learn</span>
+                            <span class="tech-badge">LightGBM</span>
+                            <span class="tech-badge">XGBoost</span>
+                            <span class="tech-badge">Stacking</span>
                         </div>
                         <span class="project-link">자세히 보기</span>
                     </div>
@@ -815,18 +834,19 @@
                     <span class="tech-badge">Streamlit</span>
                 </div>
                 <div class="modal-body">
-                    <h3>프로젝트 개요</h3>
-                    <p>카메라로 촬영한 식재료를 YOLO 모델이 자동으로 인식하고, 인식된 재료를 기반으로 GPT API 챗봇이 맞춤형 레시피를 추천해주는 AI 시스템입니다.</p>
-                    <h3>주요 역할</h3>
+                    <h3>개요</h3>
+                    <p>식재료를 YOLO 모델로 자동 인식하고, GPT API 챗봇이 맞춤 레시피를 추천하는 AI 시스템입니다.</p>
+                    <h3>역할</h3>
+                    <p>팀장 | 프로젝트 설계, 데이터 수집, 모델 비교 실험</p>
+                    <h3>진행 과정</h3>
                     <ul>
-                        <li>프로젝트 전체 방향 설계 및 아키텍처 구성</li>
-                        <li>식재료 이미지 데이터 수집 및 전처리</li>
-                        <li>YOLO 모델 학습 및 다양한 모델 간 비교 실험 수행</li>
-                        <li>OpenAI GPT API를 연동한 챗봇 기반 레시피 추천 기능 구현</li>
-                        <li>Streamlit을 활용한 웹 인터페이스 개발</li>
+                        <li><strong>데이터 구축</strong> — 수천 장의 식재료 이미지를 직접 수집하고 labelImg로 라벨링하여 자체 데이터셋 구축</li>
+                        <li><strong>전략 전환</strong> — 초기 정확도 30% 미만 확인 후, 자체 데이터는 테스트용으로 전환하고 검증된 외부 데이터셋을 학습에 활용</li>
+                        <li><strong>모델 선정</strong> — 외부 데이터셋 후보를 YOLOv5s/v5m/v8s/v8m 4개 모델로 비교 실험하여 최적 데이터셋 선정 후, 하이퍼파라미터 튜닝을 거쳐 최종 YOLOv5m 확정</li>
+                        <li><strong>서비스 구현</strong> — Streamlit 웹 UI, 자체 레시피 DB 및 실시간 크롤링, OpenAI API 챗봇 연동</li>
                     </ul>
                     <h3>성과</h3>
-                    <p>데이터 수집부터 모델 학습, 서비스 배포까지 AI 프로젝트의 전체 파이프라인을 경험하며 컴퓨터 비전과 자연어 처리를 결합한 실용적인 서비스를 구현했습니다.</p>
+                    <p>데이터 수집 → 모델링 → 최적화 → 서비스 배포까지 AI 프로젝트 전체 파이프라인을 성공적으로 완수했습니다.</p>
                 </div>
             </div>
         </div>
@@ -835,23 +855,29 @@
             <div class="modal-content">
                 <button class="modal-close" onclick="closeModal(event, true)">&times;</button>
                 <div class="modal-category">딥러닝</div>
-                <h2 class="modal-title">NumPy 기반 인공신경망 구현</h2>
+                <h2 class="modal-title">NumPy 기반 CIFAR-100 분류기 구현</h2>
                 <div class="modal-tech">
                     <span class="tech-badge">Python</span>
                     <span class="tech-badge">NumPy</span>
                 </div>
                 <div class="modal-body">
-                    <h3>프로젝트 개요</h3>
-                    <p>TensorFlow, PyTorch 등 딥러닝 프레임워크를 사용하지 않고 NumPy만으로 인공신경망을 밑바닥부터 직접 구현하여 핵심 동작 원리를 깊이 이해하는 프로젝트입니다.</p>
-                    <h3>주요 내용</h3>
+                    <h3>개요</h3>
+                    <p>딥러닝 프레임워크 없이 NumPy만으로 CIFAR-100 이미지 분류 모델을 밑바닥부터 직접 구현하는 프로젝트입니다.</p>
+                    <h3>역할</h3>
+                    <p>팀원 | CNN, ResNet 등 단일 모델 구현 및 성능 비교 분석</p>
+                    <h3>진행 과정</h3>
                     <ul>
-                        <li>순전파(Forward Propagation) 및 역전파(Backpropagation) 알고리즘 직접 구현</li>
-                        <li>활성화 함수(ReLU, Sigmoid, Softmax) 및 손실 함수 구현</li>
-                        <li>경사 하강법 기반 가중치 업데이트 로직 설계</li>
-                        <li>다층 퍼셉트론(MLP) 구조 구현 및 학습 실험</li>
+                        <li><strong>점진적 고도화</strong> — MLP → CNN → ResNet → DenseNet 순으로 모델 복잡도를 단계적으로 확장</li>
+                        <li><strong>원리 체득</strong> — 순전파/역전파의 가중치 업데이트 연산을 직접 코드로 구현하며 딥러닝 내부 동작 원리 이해</li>
+                        <li><strong>체계적 최적화</strong> — 가설 수립 → 실험 설계 → 정량 분석 → 개선의 반복 사이클 수립</li>
+                        <li><strong>과적합 해결</strong> — 데이터 증강, 드롭아웃, 레이블 스무딩 등 정규화 기법을 순차 적용하며 최적 조합 탐색</li>
                     </ul>
                     <h3>성과</h3>
-                    <p>프레임워크에 의존하지 않고 신경망의 수학적 원리를 직접 구현함으로써 딥러닝의 근본적인 동작 메커니즘에 대한 깊은 이해를 확보했습니다.</p>
+                    <ul>
+                        <li>단일 모델 정확도 <strong>13% → 70.52%</strong> 달성</li>
+                        <li>A+ 학점 취득</li>
+                        <li>결과물을 발전시켜 <strong>프로젝트 보고서 챌린지(CPC) 수상</strong></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -868,17 +894,18 @@
                     <span class="tech-badge">Semaphore</span>
                 </div>
                 <div class="modal-body">
-                    <h3>프로젝트 개요</h3>
+                    <h3>개요</h3>
                     <p>멀티코어 환경에서 CNN 추론 연산의 병렬처리 성능을 비교 분석하는 운영체제 기반 시스템 프로그래밍 프로젝트입니다.</p>
-                    <h3>주요 내용</h3>
+                    <h3>역할</h3>
+                    <p>팀원 | 스레드 기반 병렬 처리 모델 구현</p>
+                    <h3>진행 과정</h3>
                     <ul>
-                        <li>C언어와 POSIX API를 활용한 프로세스 기반 병렬 처리 구현</li>
-                        <li>스레드 기반 병렬 처리 구현 및 프로세스 방식과 성능 비교</li>
-                        <li>뮤텍스(Mutex)와 세마포어(Semaphore) 동기화 기법 직접 구현</li>
-                        <li>동기화 방식에 따른 병렬 처리 성능 영향 비교 분석</li>
+                        <li><strong>병렬 처리 구현</strong> — C언어와 POSIX API를 활용하여 프로세스/스레드 기반 병렬 처리를 각각 구현</li>
+                        <li><strong>동기화 구현</strong> — 뮤텍스(Mutex)와 세마포어(Semaphore) 동기화 기법을 직접 설계 및 구현</li>
+                        <li><strong>성능 비교</strong> — 프로세스 vs 스레드, 뮤텍스 vs 세마포어 조합별 CNN 추론 성능을 정량적으로 측정 및 분석</li>
                     </ul>
                     <h3>성과</h3>
-                    <p>프로세스/스레드 병렬 처리와 동기화 기법의 성능 차이를 실험적으로 검증하며 운영체제 수준의 시스템 프로그래밍 역량을 강화했습니다.</p>
+                    <p>멀티코어 환경에서 CNN 연산 최적화를 위한 효과적인 병렬 처리 전략을 도출하고, 시스템 수준의 프로그래밍 역량을 강화했습니다.</p>
                 </div>
             </div>
         </div>
@@ -887,24 +914,27 @@
             <div class="modal-content">
                 <button class="modal-close" onclick="closeModal(event, true)">&times;</button>
                 <div class="modal-category">AI 챌린지</div>
-                <h2 class="modal-title">스마트팩토리 전력 소비 예측</h2>
+                <h2 class="modal-title">스마트팩토리 전력 소비 예측 (우수상)</h2>
                 <div class="modal-tech">
                     <span class="tech-badge">Python</span>
-                    <span class="tech-badge">Time Series</span>
-                    <span class="tech-badge">Scikit-learn</span>
+                    <span class="tech-badge">LightGBM</span>
+                    <span class="tech-badge">XGBoost</span>
+                    <span class="tech-badge">Stacking Ensemble</span>
                 </div>
                 <div class="modal-body">
-                    <h3>프로젝트 개요</h3>
-                    <p>스마트 팩토리 AI 챌린지에 참여하여 설비별 전력 소비 시계열 데이터를 예측하는 AI 모델을 개발한 프로젝트입니다.</p>
-                    <h3>주요 내용</h3>
+                    <h3>개요</h3>
+                    <p>설비별 전력 소비량 시계열 데이터를 기반으로 미래 사용량을 예측하는 AI 모델을 개발하는 챌린지입니다. (주최: 단국대학교 SW중심대학사업단)</p>
+                    <h3>역할</h3>
+                    <p>팀장 | 프로젝트 방향 설계 및 팀원 역할 조율</p>
+                    <h3>진행 과정</h3>
                     <ul>
-                        <li>설비별 전력 소비 시계열 데이터 탐색 및 전처리</li>
-                        <li>시계열 특성을 반영한 피처 엔지니어링 수행</li>
-                        <li>다양한 머신러닝 모델 비교 실험 및 하이퍼파라미터 튜닝</li>
-                        <li>예측 정확도 최적화를 통한 최종 모델 선정</li>
+                        <li><strong>도메인 분석</strong> — 설비의 물리적 특성과 에너지 소비 메커니즘에 대한 논문을 탐구하여 도메인 지식 확보</li>
+                        <li><strong>데이터 전처리</strong> — 설비 간 관계 및 시간대별 특징 시각화, 결측치는 발생 패턴을 분석하여 통계적으로 유의미한 방식으로 처리</li>
+                        <li><strong>모델링</strong> — LightGBM, XGBoost 등 다양한 모델을 학습시키고 검증 세트 평가지표를 비교하여 장단점 분석</li>
+                        <li><strong>앙상블</strong> — 상위 성능 모델들에 하이퍼파라미터 튜닝을 적용한 뒤 Stacking 앙상블로 최종 모델 구축</li>
                     </ul>
                     <h3>성과</h3>
-                    <p>대회에서 <strong>우수상</strong>을 수상하며 시계열 데이터 분석과 예측 모델링 역량을 입증했습니다.</p>
+                    <p>개별 모델을 뛰어넘는 안정적인 예측 성능을 달성하여 <strong>최종 우수상 수상.</strong> 도메인 지식 기반 분석부터 모델 최적화, 앙상블까지 ML 프로젝트 전 과정을 경험했습니다.</p>
                 </div>
             </div>
         </div>
@@ -920,17 +950,19 @@
                     <span class="tech-badge">Matplotlib</span>
                 </div>
                 <div class="modal-body">
-                    <h3>프로젝트 개요</h3>
-                    <p>데이터톤에 참여하여 도서관의 도서 대출 데이터를 분석하고, 보존서고 이동 대상 도서를 선정하며 향후 서가 공간 확보를 위한 예측 분석을 수행한 프로젝트입니다.</p>
-                    <h3>주요 내용</h3>
+                    <h3>개요</h3>
+                    <p>숭실대학교 도서관의 도서 대출 데이터를 분석하여 보존서고 이동 대상 도서를 선정하고, 서가 공간 확보를 위한 예측 분석을 수행한 데이터톤 프로젝트입니다.</p>
+                    <h3>역할</h3>
+                    <p>팀원 | 보존서고 이동 대상 선정 및 주제별 도서 입수 예측 모델 구현</p>
+                    <h3>진행 과정</h3>
                     <ul>
-                        <li>도서 대출 이력 데이터 정제 및 탐색적 데이터 분석(EDA) 수행</li>
-                        <li>자료의 최신성과 이용 가능성을 기준으로 보존서고 이동 대상 도서 선정 기준 수립</li>
-                        <li>주제별 도서 입수량 예측 모델 개발</li>
-                        <li>분석 결과를 기반으로 서가 공간 확보 전략 제안</li>
+                        <li><strong>데이터 탐색</strong> — 도서 대출 이력 데이터 정제 및 탐색적 데이터 분석(EDA) 수행</li>
+                        <li><strong>기준 수립</strong> — 자료의 최신성과 이용 가능성을 기준으로 보존서고 이동 대상 도서 선정</li>
+                        <li><strong>예측 모델</strong> — 주제별 도서 입수량 예측 모델 개발</li>
+                        <li><strong>인사이트 도출</strong> — 시각화 및 분류 기법을 활용해 데이터 간 관계를 파악하고 서가 공간 확보 전략 제안</li>
                     </ul>
                     <h3>성과</h3>
-                    <p>실제 도서관 운영 데이터를 활용한 데이터 기반 의사결정 과정을 경험하며 데이터 분석 및 시각화 역량을 강화했습니다.</p>
+                    <p>실제 도서관 운영 데이터를 활용한 데이터 기반 의사결정 과정을 경험하며 데이터 분석 역량을 강화했습니다.</p>
                 </div>
             </div>
         </div>
@@ -946,17 +978,19 @@
                     <span class="tech-badge">Data Augmentation</span>
                 </div>
                 <div class="modal-body">
-                    <h3>프로젝트 개요</h3>
-                    <p>'폰트 데이터 증강이 MNIST 숫자 분류 모델의 일반화 성능을 향상시킬 것이다'라는 가설을 설정하고 이를 실험적으로 검증한 머신러닝 프로젝트입니다.</p>
-                    <h3>주요 내용</h3>
+                    <h3>개요</h3>
+                    <p>'폰트 데이터 증강이 MNIST 숫자 분류 모델의 일반화 성능을 향상시킬 것이다'라는 가설을 설정하고 실험적으로 검증한 머신러닝 프로젝트입니다.</p>
+                    <h3>역할</h3>
+                    <p>팀장 | MNIST 원본과 증강 데이터 비교 학습을 통한 가설 검증 수행</p>
+                    <h3>진행 과정</h3>
                     <ul>
-                        <li>다양한 폰트를 활용한 숫자 이미지 데이터 직접 생성</li>
-                        <li>기존 MNIST 데이터셋에 생성한 폰트 데이터를 추가하여 학습 데이터 증강</li>
-                        <li>기존 데이터로만 학습한 모델 vs 증강 데이터로 학습한 모델 성능 비교</li>
-                        <li>실험 결과 비교 분석을 통한 가설 검증</li>
+                        <li><strong>데이터 생성</strong> — 다양한 폰트를 활용하여 숫자 이미지 데이터를 직접 생성</li>
+                        <li><strong>데이터 증강</strong> — 기존 MNIST 데이터셋에 생성한 폰트 데이터를 추가하여 학습 데이터 확장</li>
+                        <li><strong>비교 실험</strong> — 원본 데이터만으로 학습한 모델 vs 증강 데이터로 학습한 모델의 예측 성능을 각각 평가</li>
+                        <li><strong>가설 검증</strong> — 두 실험 결과를 정량적으로 비교 분석하여 가설의 타당성 검증</li>
                     </ul>
                     <h3>성과</h3>
-                    <p>데이터 증강이 모델의 일반화 성능 향상에 긍정적 영향을 미친다는 것을 실험적으로 입증하며 가설을 성공적으로 검증했습니다.</p>
+                    <p>데이터 증강이 모델의 일반화 성능 향상에 긍정적 영향을 미친다는 것을 실험적으로 <strong>입증하며 가설을 성공적으로 검증</strong>했습니다.</p>
                 </div>
             </div>
         </div>
@@ -973,17 +1007,17 @@
                     <span class="tech-badge">Python</span>
                 </div>
                 <div class="modal-body">
-                    <h3>프로젝트 개요</h3>
-                    <p>VisDrone-DET 데이터셋을 활용하여 주요 객체 탐지 모델들의 성능을 비교하고, 노이즈/블러/저해상도 등 열악한 조건에서의 강건성을 분석한 프로젝트입니다.</p>
-                    <h3>주요 내용</h3>
+                    <h3>개요</h3>
+                    <p>VisDrone-DET 데이터셋에서 주요 객체 탐지 모델들의 성능을 비교하고, 열악한 조건에서의 강건성을 분석한 프로젝트입니다.</p>
+                    <h3>진행 과정</h3>
                     <ul>
-                        <li>YOLO, Faster R-CNN, Deformable DETR 3개 모델의 객체 탐지 성능 비교</li>
-                        <li>합성 열화(노이즈, 블러, 저해상도) 조건을 적용한 강건성 실험 설계</li>
-                        <li>정상 조건 및 열화 조건에서의 탐지 성능(Recall) 비교 분석</li>
-                        <li>방위 및 감시 시나리오에서의 최악 조건 대응 성능 평가</li>
+                        <li><strong>모델 비교</strong> — YOLO, Faster R-CNN, Deformable DETR 3개 모델의 정상 조건 탐지 성능 평가</li>
+                        <li><strong>강건성 실험</strong> — 노이즈, 블러, 저해상도 등 합성 열화 조건을 적용한 실험 설계</li>
+                        <li><strong>성능 분석</strong> — 정상/열화 조건별 Recall을 비교하여 모델별 강건성 차이를 정량적으로 분석</li>
+                        <li><strong>실전 평가</strong> — 방위 및 감시 시나리오에서의 최악 조건 대응 성능 평가</li>
                     </ul>
                     <h3>성과</h3>
-                    <p>다양한 열화 조건에서 각 모델의 강건성 차이를 실험적으로 규명하며 실전 환경에 적합한 객체 탐지 모델 선정 기준을 제시했습니다.</p>
+                    <p>열화 조건에서 각 모델의 강건성 차이를 실험적으로 규명하며, 실전 환경에 적합한 객체 탐지 모델 선정 기준을 제시했습니다.</p>
                 </div>
             </div>
         </div>
