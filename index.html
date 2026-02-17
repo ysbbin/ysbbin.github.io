@@ -729,8 +729,28 @@
             <h2 class="section-title">프로젝트</h2>
 
             <div class="projects-gallery">
+                <!-- Project 7 -->
+                <div class="project-card fade-in" onclick="openModal('modal-7')">
+                    <div class="project-thumbnail">🎯</div>
+                    <div class="project-info">
+                        <div class="project-category">객체 탐지 / 강건성 분석</div>
+                        <h3 class="project-title">이미지 열화 환경에서의 객체 탐지 강건성 분석 및 개선</h3>
+                        <p class="project-description">
+                            VisDrone-DET 드론 항공 데이터셋에서 3종 탐지 모델의 열화 조건별 성능 저하를 분석하고, 증강 학습과 U-Net 복원 전략으로 강건성을 개선했습니다.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">PyTorch</span>
+                            <span class="tech-badge">YOLOv8</span>
+                            <span class="tech-badge">RT-DETR</span>
+                            <span class="tech-badge">Faster R-CNN</span>
+                        </div>
+                        <span class="project-link">자세히 보기</span>
+                    </div>
+                </div>
+
                 <!-- Project 1 -->
-                <div class="project-card fade-in" onclick="openModal('modal-1')">
+                <div class="project-card fade-in" style="animation-delay: 0.1s;" onclick="openModal('modal-1')">
                     <div class="project-thumbnail">🍳</div>
                     <div class="project-info">
                         <div class="project-category">AI / 컴퓨터 비전</div>
@@ -749,7 +769,7 @@
                 </div>
 
                 <!-- Project 2 -->
-                <div class="project-card fade-in" style="animation-delay: 0.1s;" onclick="openModal('modal-2')">
+                <div class="project-card fade-in" style="animation-delay: 0.2s;" onclick="openModal('modal-2')">
                     <div class="project-thumbnail">🧠</div>
                     <div class="project-info">
                         <div class="project-category">딥러닝</div>
@@ -766,7 +786,7 @@
                 </div>
 
                 <!-- Project 3 -->
-                <div class="project-card fade-in" style="animation-delay: 0.2s;" onclick="openModal('modal-3')">
+                <div class="project-card fade-in" style="animation-delay: 0.3s;" onclick="openModal('modal-3')">
                     <div class="project-thumbnail">⚙️</div>
                     <div class="project-info">
                         <div class="project-category">시스템 프로그래밍</div>
@@ -785,7 +805,7 @@
                 </div>
 
                 <!-- Project 4 -->
-                <div class="project-card fade-in" style="animation-delay: 0.3s;" onclick="openModal('modal-4')">
+                <div class="project-card fade-in" style="animation-delay: 0.4s;" onclick="openModal('modal-4')">
                     <div class="project-thumbnail">🏭</div>
                     <div class="project-info">
                         <div class="project-category">AI 챌린지</div>
@@ -804,7 +824,7 @@
                 </div>
 
                 <!-- Project 5 -->
-                <div class="project-card fade-in" style="animation-delay: 0.4s;" onclick="openModal('modal-5')">
+                <div class="project-card fade-in" style="animation-delay: 0.5s;" onclick="openModal('modal-5')">
                     <div class="project-thumbnail">📚</div>
                     <div class="project-info">
                         <div class="project-category">데이터 분석</div>
@@ -822,7 +842,7 @@
                 </div>
 
                 <!-- Project 6 -->
-                <div class="project-card fade-in" style="animation-delay: 0.5s;" onclick="openModal('modal-6')">
+                <div class="project-card fade-in" style="animation-delay: 0.6s;" onclick="openModal('modal-6')">
                     <div class="project-thumbnail">🔢</div>
                     <div class="project-info">
                         <div class="project-category">머신러닝</div>
@@ -839,23 +859,6 @@
                     </div>
                 </div>
 
-                <!-- Project 7 -->
-                <div class="project-card fade-in" style="animation-delay: 0.6s;" onclick="openModal('modal-7')">
-                    <div class="project-thumbnail">🎯</div>
-                    <div class="project-info">
-                        <div class="project-category">객체 탐지</div>
-                        <h3 class="project-title">열악한 환경에서의 강건한 객체 탐지 비교</h3>
-                        <p class="project-description">
-                            VisDrone-DET 데이터셋에서 다양한 객체 탐지 모델의 성능과 열화 조건에서의 강건성을 비교 분석했습니다.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-badge">YOLO</span>
-                            <span class="tech-badge">Faster R-CNN</span>
-                            <span class="tech-badge">Deformable DETR</span>
-                        </div>
-                        <span class="project-link">자세히 보기</span>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -1036,26 +1039,38 @@
         <div class="modal-overlay" id="modal-7" onclick="closeModal(event)">
             <div class="modal-content">
                 <button class="modal-close" onclick="closeModal(event, true)">&times;</button>
-                <div class="modal-category">객체 탐지</div>
-                <h2 class="modal-title">열악한 환경에서의 강건한 객체 탐지 비교</h2>
+                <div class="modal-category">객체 탐지 / 강건성 분석</div>
+                <h2 class="modal-title">이미지 열화 환경에서의 객체 탐지 강건성 분석 및 개선</h2>
                 <div class="modal-tech">
-                    <span class="tech-badge">YOLO</span>
-                    <span class="tech-badge">Faster R-CNN</span>
-                    <span class="tech-badge">Deformable DETR</span>
                     <span class="tech-badge">Python</span>
+                    <span class="tech-badge">PyTorch</span>
+                    <span class="tech-badge">YOLOv8m</span>
+                    <span class="tech-badge">RT-DETR-L</span>
+                    <span class="tech-badge">Faster R-CNN</span>
+                    <span class="tech-badge">U-Net</span>
+                    <span class="tech-badge">Ultralytics</span>
                 </div>
                 <div class="modal-body">
                     <h3>개요</h3>
-                    <p>VisDrone-DET 데이터셋에서 주요 객체 탐지 모델들의 성능을 비교하고, 열악한 조건에서의 강건성을 분석한 프로젝트입니다.</p>
+                    <p>드론 항공 영상(VisDrone-DET)에서 이미지 열화(노이즈, 블러, 저해상도)가 객체 탐지 성능에 미치는 영향을 분석하고, 증강 학습과 U-Net 이미지 복원 전략으로 강건성을 개선하는 연구 프로젝트입니다.</p>
                     <h3>진행 과정</h3>
                     <ul>
-                        <li><strong>모델 비교</strong> — YOLO, Faster R-CNN, Deformable DETR 3개 모델의 정상 조건 탐지 성능 평가</li>
-                        <li><strong>강건성 실험</strong> — 노이즈, 블러, 저해상도 등 합성 열화 조건을 적용한 실험 설계</li>
-                        <li><strong>성능 분석</strong> — 정상/열화 조건별 Recall을 비교하여 모델별 강건성 차이를 정량적으로 분석</li>
-                        <li><strong>실전 평가</strong> — 방위 및 감시 시나리오에서의 최악 조건 대응 성능 평가</li>
+                        <li><strong>Phase 1 — 베이스라인 평가</strong> — Faster R-CNN, RT-DETR-L, YOLOv8m 3종 모델을 정상 데이터로 학습 후, 노이즈·블러·저해상도 열화 조건에서 성능 저하를 측정 (최대 -46.1%, Faster R-CNN 블러)</li>
+                        <li><strong>Phase 2 — 증강 학습</strong> — 학습 데이터에 50% 열화 증강을 적용하여 재학습, 모든 모델에서 강건성 향상 확인 (YOLOv8m 블러 mAP +0.175 개선)</li>
+                        <li><strong>Phase 3 — U-Net 복원</strong> — 경량 U-Net(3.70M 파라미터)을 학습하여 열화 이미지를 복원 후 탐지 수행, 블러 조건에서 우수한 성능 확인 (PSNR 34.03dB, SSIM 0.947)</li>
+                        <li><strong>전략 비교</strong> — 36개 실험 조합(3전략 × 3모델 × 4조건)을 체계적으로 비교하여 조건별 최적 전략 도출</li>
+                    </ul>
+                    <h3>핵심 결과</h3>
+                    <ul>
+                        <li><strong>범용 강건성</strong> — YOLOv8m + 증강 학습이 평균 성능 저하율 -4.7%로 가장 안정적</li>
+                        <li><strong>블러 특화</strong> — U-Net 복원 전처리가 증강 학습보다 우수 (YOLOv8m 블러 mAP 0.640)</li>
+                        <li><strong>복원 한계</strong> — 노이즈 조건에서 U-Net 과도한 평활화로 오히려 성능 급감 (-65.2%)</li>
+                        <li><strong>아키텍처 특성</strong> — Faster R-CNN은 2단계 파이프라인 특성상 블러에 가장 취약, RT-DETR-L은 글로벌 어텐션으로 균형 잡힌 강건성 확보</li>
                     </ul>
                     <h3>성과</h3>
-                    <p>열화 조건에서 각 모델의 강건성 차이를 실험적으로 규명하며, 실전 환경에 적합한 객체 탐지 모델 선정 기준을 제시했습니다.</p>
+                    <p>3종 모델 × 3종 전략 × 4종 열화 조건의 체계적 실험을 통해, 드론 감시·방위 시나리오에서의 <strong>열화 유형별 최적 대응 전략</strong>을 실험적으로 규명했습니다.</p>
+                    <h3>GitHub</h3>
+                    <p><a href="https://github.com/ysbbin/Robust-Object-Detection" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 0.4rem; transition: gap 0.3s ease;">github.com/ysbbin/Robust-Object-Detection<span style="transition: transform 0.3s ease;">→</span></a></p>
                 </div>
             </div>
         </div>
