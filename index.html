@@ -859,6 +859,25 @@
                     </div>
                 </div>
 
+                <!-- Project 8 -->
+                <div class="project-card fade-in" style="animation-delay: 0.7s;" onclick="openModal('modal-8')">
+                    <div class="project-thumbnail">📈</div>
+                    <div class="project-info">
+                        <div class="project-category">AI 에이전트 / 자동화</div>
+                        <h3 class="project-title">주식 자동 리서치 에이전트</h3>
+                        <p class="project-description">
+                            Gemini 2.0 Flash와 Google Search를 활용해 관심 종목을 매일 자동 분석하고 Gmail로 HTML 리포트를 발송하는 웹 기반 자동화 시스템입니다.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Flask</span>
+                            <span class="tech-badge">Gemini API</span>
+                            <span class="tech-badge">Google Search</span>
+                        </div>
+                        <span class="project-link">자세히 보기</span>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -1075,6 +1094,57 @@
                     <p>3종 모델 × 3종 전략 × 4종 열화 조건의 체계적 실험을 통해, 드론 감시·방위 시나리오에서의 <strong>열화 유형별 최적 대응 전략</strong>을 실험적으로 규명했습니다.</p>
                     <h3>GitHub</h3>
                     <p><a href="https://github.com/ysbbin/Robust-Object-Detection" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 0.4rem; transition: gap 0.3s ease;">github.com/ysbbin/Robust-Object-Detection<span style="transition: transform 0.3s ease;">→</span></a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-overlay" id="modal-8" onclick="closeModal(event)">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeModal(event, true)">&times;</button>
+                <div class="modal-category">AI 에이전트 / 자동화</div>
+                <h2 class="modal-title">주식 자동 리서치 에이전트</h2>
+                <div class="modal-tech">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Flask</span>
+                    <span class="tech-badge">Gemini 2.5 Flash</span>
+                    <span class="tech-badge">Google Search</span>
+                    <span class="tech-badge">Gmail SMTP</span>
+                    <span class="tech-badge">Windows Scheduler</span>
+                </div>
+                <div class="modal-body">
+                    <h3>개요</h3>
+                    <p>Gemini 2.5 Flash와 Google Search를 활용해 관심 종목·산업의 최신 뉴스와 시장 동향을 매일 자동 분석하고, 사용자별 맞춤 HTML 리포트를 Gmail로 발송하는 웹 기반 자동화 시스템입니다. 터미널 없이 브라우저만으로 모든 설정과 관리가 가능하며, 완전 무료로 운영할 수 있습니다.</p>
+                    <h3>시스템 구조</h3>
+                    <ul>
+                        <li><strong>웹 대시보드 (app.py / Flask)</strong> — API 키·Gmail 인증·관심 종목 설정, 다중 사용자 구독 관리, 즉시 발송 테스트 기능 제공. 설정은 JSON 파일로 영속 저장</li>
+                        <li><strong>AI 리서치 엔진 (scheduler.py)</strong> — 공통 시장 뉴스 1회 생성 후 사용자별 관심 자산을 중복 없이 캐싱하여 불필요한 API 호출 최소화</li>
+                        <li><strong>자동화 (setup_scheduler.bat)</strong> — PowerShell로 Windows 작업 스케줄러에 일일 작업 등록, 웹 서버 종료 후에도 매일 지정 시간에 자동 실행</li>
+                    </ul>
+                    <h3>AI 분석 로직</h3>
+                    <ul>
+                        <li><strong>모델</strong> — Gemini 2.5 Flash, Temperature 0.3 (정확성 중심), Google Search 도구 활성화</li>
+                        <li><strong>종목 리서치</strong> — 요약·시장해석·현재위치·매력도·리스크 5개 섹션으로 분석</li>
+                        <li><strong>산업 리서치</strong> — 요약·수급·사이클·수혜주·매력도·리스크 6개 섹션으로 분석</li>
+                        <li><strong>타임프레임 분석</strong> — 자산별 단기·중기·장기 전망을 각각 생성</li>
+                        <li><strong>공통 뉴스 요약</strong> — 당일 글로벌·한국 시장의 핵심 요인 3가지 추출</li>
+                    </ul>
+                    <h3>이메일 리포트 구조</h3>
+                    <ul>
+                        <li><strong>포트폴리오 요약</strong> — 보유 자산별 1줄 해석 (10단어 이내)</li>
+                        <li><strong>포트폴리오 리스크</strong> — 공통 위험요소 1~2개 요약</li>
+                        <li><strong>시장 방향 & 심리</strong> — 당일 글로벌·국내 시장 뉴스 3가지</li>
+                        <li><strong>종목·산업 카드</strong> — 각 자산별 상세 분석 카드 (색상 코딩)</li>
+                        <li><strong>타임프레임 관점</strong> — 단기·중기·장기 전망 통합 섹션</li>
+                    </ul>
+                    <h3>주요 특징</h3>
+                    <ul>
+                        <li><strong>완전 무료</strong> — Gemini API 무료 티어(분당 15회, 하루 1,500회) 활용으로 비용 부담 없음</li>
+                        <li><strong>다중 사용자</strong> — UUID 기반 구독자 관리, 사용자별 관심 종목·발송 시간 개별 설정</li>
+                        <li><strong>효율적 API 호출</strong> — report_map 캐싱으로 동일 자산의 중복 분석 방지</li>
+                        <li><strong>GUI 전용</strong> — 터미널 없이 브라우저만으로 설정·테스트·즉시 발송 모두 처리</li>
+                    </ul>
+                    <h3>GitHub</h3>
+                    <p><a href="https://github.com/ysbbin/Stock_Agent" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 0.4rem; transition: gap 0.3s ease;">github.com/ysbbin/Stock_Agent<span style="transition: transform 0.3s ease;">→</span></a></p>
                 </div>
             </div>
         </div>
