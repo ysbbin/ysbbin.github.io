@@ -859,6 +859,25 @@
                     </div>
                 </div>
 
+                <!-- Project 9 -->
+                <div class="project-card fade-in" style="animation-delay: 0.8s;" onclick="openModal('modal-9')">
+                    <div class="project-thumbnail">🔐</div>
+                    <div class="project-info">
+                        <div class="project-category">보안 / LLM</div>
+                        <h3 class="project-title">RAG 시스템에서의 Prompt Injection 취약성 분석 및 방어 전략 비교</h3>
+                        <p class="project-description">
+                            RAG 파이프라인에서 외부 문서의 악성 지시가 LLM에 미치는 영향을 측정하고, 3가지 공격 시나리오와 3가지 방어 기법의 효과를 비교한 보안 연구 프로젝트입니다.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">LangChain</span>
+                            <span class="tech-badge">ChromaDB</span>
+                            <span class="tech-badge">GPT-4o-mini</span>
+                        </div>
+                        <span class="project-link">자세히 보기</span>
+                    </div>
+                </div>
+
                 <!-- Project 8 -->
                 <div class="project-card fade-in" style="animation-delay: 0.7s;" onclick="openModal('modal-8')">
                     <div class="project-thumbnail">📈</div>
@@ -1094,6 +1113,42 @@
                     <p>3종 모델 × 3종 전략 × 4종 열화 조건의 체계적 실험을 통해, 드론 감시·방위 시나리오에서의 <strong>열화 유형별 최적 대응 전략</strong>을 실험적으로 규명했습니다.</p>
                     <h3>GitHub</h3>
                     <p><a href="https://github.com/ysbbin/Robust-Object-Detection" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 0.4rem; transition: gap 0.3s ease;">github.com/ysbbin/Robust-Object-Detection<span style="transition: transform 0.3s ease;">→</span></a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-overlay" id="modal-9" onclick="closeModal(event)">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeModal(event, true)">&times;</button>
+                <div class="modal-category">보안 / LLM</div>
+                <h2 class="modal-title">RAG 시스템에서의 Prompt Injection 취약성 분석 및 방어 전략 비교</h2>
+                <div class="modal-tech">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">LangChain</span>
+                    <span class="tech-badge">ChromaDB</span>
+                    <span class="tech-badge">GPT-4o-mini</span>
+                    <span class="tech-badge">Sentence-transformers</span>
+                    <span class="tech-badge">HotpotQA</span>
+                </div>
+                <div class="modal-body">
+                    <h3>개요</h3>
+                    <p>RAG 파이프라인에서 외부 문서에 삽입된 악성 지시가 LLM 응답에 미치는 영향을 실험적으로 측정하고, 3가지 공격 시나리오와 3가지 방어 기법의 효과를 체계적으로 비교한 보안 연구 프로젝트입니다.</p>
+                    <h3>진행 과정</h3>
+                    <ul>
+                        <li><strong>공격 시나리오 설계</strong> — Direct Injection(문서 끝 명시적 지시, ASR 최대 30%), Indirect Injection(메타데이터 위장, ASR 1.1%), Context Manipulation(정규식 기반 사실 왜곡, ASR 0%) 3종 구현</li>
+                        <li><strong>방어 기법 구현</strong> — Input Filtering(정규식 기반 악성 패턴 탐지), Prompt Hardening(시스템 프롬프트 보안 규칙 추가), Context Sandboxing(문서를 태그로 격리) 3종 구현</li>
+                        <li><strong>실험 설계</strong> — HotpotQA 데이터셋 기반, 실험당 30샘플, 공격 삽입 위치(Rank 1/3/5) 변수 추가</li>
+                        <li><strong>성능 측정</strong> — ASR(공격 성공률), DSR(방어 성공률), FPR(오탐률), Latency 4개 지표로 정량 평가</li>
+                    </ul>
+                    <h3>핵심 결과</h3>
+                    <ul>
+                        <li><strong>Input Filtering</strong> — DSR 100%, FPR 0%로 가장 안정적인 방어 성능</li>
+                        <li><strong>Prompt Hardening</strong> — DSR 100%로 동등한 차단률, 구현 비용 최소</li>
+                        <li><strong>Context Sandboxing</strong> — DSR 88.9%로 다소 낮은 성능, 일부 우회 가능</li>
+                        <li><strong>삽입 위치 영향</strong> — Rank 1에 삽입 시 공격 성공률 최대, 순위가 낮아질수록 감소</li>
+                    </ul>
+                    <h3>GitHub</h3>
+                    <p><a href="https://github.com/ysbbin/RAG-Security" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 0.4rem; transition: gap 0.3s ease;">github.com/ysbbin/RAG-Security<span style="transition: transform 0.3s ease;">→</span></a></p>
                 </div>
             </div>
         </div>
